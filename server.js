@@ -3,6 +3,7 @@ const cors = require('cors');
 const knex = require('knex');
 
 const pokedex = require('./controllers/pokedex');
+const searchDex = require('./controllers/searchDex');
 
 const app = express();
 
@@ -24,6 +25,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/pokedex', (req, res) => { pokedex.handlePokedex(req, res, db) });
+
+app.post('/searchdex', (req, res) => { searchDex.handleSearchDex(req, res, db) });
 
 app.listen(process.env.PORT || 3001, () => {
 	console.log(`app is running on port ${process.env.PORT || 3001}`);
