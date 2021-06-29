@@ -7,7 +7,8 @@ CREATE TABLE Pokemon (
     ID INT GENERATED ALWAYS AS IDENTITY,
     DexNum VARCHAR(8),
     Name VARCHAR,
-    Type VARCHAR,
+    Type1 VARCHAR,
+    Type2 VARCHAR,
     RegionID INT,
     CONSTRAINT fk_regionid
       FOREIGN KEY(RegionID)
