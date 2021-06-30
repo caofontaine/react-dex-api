@@ -11,7 +11,7 @@ const handlePokedex = (req, res, db) => {
 				res.status(400).json('No Pokemon available!');
 			}
 		})
-		.catch(err => res.status(400).json('Error getting Pokemon from DB!'));
+		.catch(err => res.status(400).json(err));
 };
 
 module.exports = {
